@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Register from './components/Register';
+import Signin from './components/Signin';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="">
-       <h1>Hello</h1>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Register />}></Route>
+        <Route path='/Signin' element={<Signin />}></Route>
+      </Routes>
     </div>
   )
 }
