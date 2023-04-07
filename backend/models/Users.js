@@ -1,4 +1,4 @@
-import mongoose form 'mongoose';
+import mongoose from 'mongoose';
 
 
 const userSchema = new mongoose.Schema({
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
       type: String,
       max: 10,
       unique: true
-    }
+    },
     password: {
       type: String,
       required: true,
