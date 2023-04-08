@@ -22,4 +22,13 @@ This will start the project locally <br/>
 ![ProfilePage1](frontend/src/assets/Profile2SS.png)
 ![ProfilePage2](frontend/src/assets/Profile1SS.png)
 
+## Tasks I have Implemented
+1. Registering User<br>
+2. Logging User<br>
+3. Authentication (I used bcrypt to store hashed password)  
+
+## Tasks I have not Implemented
+1. Responsiveness<br>
+2. Getting Followers Data<br>
+3. Updating User Profile<br>
 
