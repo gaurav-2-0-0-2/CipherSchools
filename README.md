@@ -15,5 +15,8 @@ This will start the project locally <br/>
 
 ## Glimpse of the project
 ![Register Page](frontend/src/assets/RegisterSS.png)
+![Login Page](frontend/src/assets/LoginSS.png)
+![ProfilePage1](frontend/src/assets/Profile2SS.png)
+![ProfilePage2](frontend/src/assets/Profile1SS.png)
 
 
