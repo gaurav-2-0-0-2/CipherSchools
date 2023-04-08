@@ -14,8 +14,11 @@ This will start the project locally <br/>
 `node server.js` 
 
 ## Glimpse of the project
+### Register Page<br>
 ![Register Page](frontend/src/assets/RegisterSS.png)
+### Login Page<br> 
 ![Login Page](frontend/src/assets/LoginSS.png)
+### Profile Page<br>
 ![ProfilePage1](frontend/src/assets/Profile2SS.png)
 ![ProfilePage2](frontend/src/assets/Profile1SS.png)
 
