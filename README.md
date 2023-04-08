@@ -14,6 +14,6 @@ This will start the project locally <br/>
 `node server.js` 
 
 ## Glimpse of the project
-![Register Page](../CipherSchools/frontend/src/assets/RegisterSS.png)
+![Register Page](frontend/src/assets/RegisterSS.png)
 
 
