@@ -8,6 +8,7 @@ const app = express();
 import mongoose from 'mongoose';
 app.use(express.json());
 import { register,login } from './controllers/users.js';
+import { profile } from './controllers/profile.js';
 app.use(cors());
 const PORT = process.env.PORT || 5000;
 
@@ -40,6 +41,8 @@ app.get('/', (req, res) => {
 app.post("/register", register);
 
 app.post("/login", login);
+
+app.get("/profile", profile);
 
 
 
