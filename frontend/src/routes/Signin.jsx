@@ -1,37 +1,41 @@
-import { Link } from 'react-router-dom';
+import { Link, useAsyncError, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
-export default function () {
+export default function Signin() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [login, setlogin] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [error, setError] = useState("")
+    const navigate = useNavigate();
 
 
-    const configuration = {
-        method: "post",
-        url: "http://localhost:3000/login",
-        data: {
-            email,
-            password
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+          const response = await axios.post('http://localhost:3000/login', { email, password });
+          localStorage.setItem('token', response.data.token);  //Store the token in local storage
+          if(!isLoggedIn){
+            navigate('/profile')
+          }
+        } catch (error) {
+            if (error.response && error.response.status === 401 || error.response.status === 403) {
+                setError('Invalid email or password');
+              } else {
+                setError('Something went wrong. Please try again later.');
+              }
         }
-    }
-
-    axios(configuration)
-        .then((result) => {
-            setLogin(true);
-        })
-        .catch((error) => {
-            error = new Error();
-        });
+      };
 
 
-    const handleSubmit = (e) => {
 
-        e.preventDefault();
-        // alert("Submitted");
-    }
+
+
+
+
+
 
 
 
@@ -44,10 +48,10 @@ export default function () {
                     <h1>CipherSchools</h1>
                     <p>Hey, Welcome!</p>
                     <p>Please provide your email and password to signin</p>
-                    <form action="post" className="flex flex-col gap-2 mt-4">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2 mt-4">
                         <input type="email" className="px-2 py-2 rounded-lg bg-gray-200" name="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                         <input type="password" className="px-2 py-2 rounded-lg bg-gray-200" name="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                       <Link to="/profile"><button type="submit" onSubmit={handleSubmit} className=" bg-orange-400 px-2 py-2 rounded-lg">Signin</button></Link> 
+                        <button type="submit"  className=" bg-orange-400 px-2 py-2 rounded-lg">Signin</button>
                         <p>Don't have an account ? <Link to="/" className="text-orange-400">Get Started</Link></p>
                     </form>
                 </div>

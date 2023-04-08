@@ -1,6 +1,12 @@
 import Web from "./sub-components/Web"
 import Map from "./sub-components/Map"
 import DropdownMenu from "./sub-components/Dropdown"
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
 
 export default function Body() {
 
@@ -23,12 +29,12 @@ export default function Body() {
                     <button className="bg-orange-400 px-4 py-1 rounded-md">Edit</button>
                 </div>
                 <div className="grid grid-cols-4 gap-1 mb-6">
-                    <Web text="LinkdIn" />
-                    <Web text="Github" />
-                    <Web text="Facebook" />
-                    <Web text="Twitter" />
-                    <Web text="Instagram" />
-                    <Web text="Website" />
+                    <Web text="LinkdIn" iconName={<FaLinkedin/>}/>
+                    <Web text="Github" iconName={<FaGithub/>}/>
+                    <Web text="Facebook" iconName={<FaFacebook/>}/>
+                    <Web text="Twitter" iconName={<FaTwitter/>} />
+                    <Web text="Instagram" iconName={<FaInstagram/>}/>
+                    <Web text="Website" iconName={<FaGlobe/>}/>
                 </div>
                 <hr className="border-1 border-gray-400" />
 
